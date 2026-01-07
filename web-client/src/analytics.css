@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #0a0e27;
+  color: #e4e4e7;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background: #1a1f3a;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #2a2f4a;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.config {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.config label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.config input {
+  padding: 0.5rem;
+  border: 1px solid #3a3f5a;
+  background: #0a0e27;
+  color: #e4e4e7;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.config button {
+  padding: 0.5rem 1rem;
+  background: #4c6ef5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.config button:hover {
+  background: #5c7cfa;
+}
+
+.config button:disabled {
+  background: #3a3f5a;
+  cursor: not-allowed;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sessions-list {
+  width: 300px;
+  background: #1a1f3a;
+  border-right: 1px solid #2a2f4a;
+  display: flex;
+  flex-direction: column;
+}
+
+.sessions-list h2 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #2a2f4a;
+}
+
+.session-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.session-item {
+  padding: 1rem;
+  border-bottom: 1px solid #2a2f4a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.session-item:hover {
+  background: #2a2f4a;
+}
+
+.session-item.selected {
+  background: #3a3f5a;
+  border-left: 3px solid #4c6ef5;
+}
+
+.session-id {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.session-meta {
+  font-size: 0.875rem;
+  color: #a0a0a7;
+}
+
+.session-detail {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #6a6f8a;
+  font-size: 1.1rem;
+}
+
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.session-header h2 {
+  font-size: 1.5rem;
+}
+
+.session-header button {
+  padding: 0.5rem 1rem;
+  background: #37b24d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.session-header button:hover {
+  background: #40c057;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #1a1f3a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #2a2f4a;
+}
+
+.stat-card h3 {
+  font-size: 0.875rem;
+  color: #a0a0a7;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4c6ef5;
+}
+
+.chart-section {
+  background: #1a1f3a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #2a2f4a;
+  margin-bottom: 2rem;
+}
+
+.chart-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.device-table {
+  background: #1a1f3a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #2a2f4a;
+}
+
+.device-table h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid #2a2f4a;
+  color: #a0a0a7;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+tbody td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #2a2f4a;
+}
+
+tbody tr:hover {
+  background: #2a2f4a;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "WaveSync",
+  "short_name": "WaveSync",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196f3",
+  "description": "WaveSync Flutter Web",
+  "icons": []
+}

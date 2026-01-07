@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WaveSync Web Client</title>
+    <style>
+      body { font-family: system-ui, Arial, sans-serif; margin: 16px; }
+      input, button { margin: 4px; }
+      .row { margin-bottom: 8px; }
+      #log { white-space: pre-wrap; border: 1px solid #ddd; padding: 8px; height: 260px; overflow: auto; }
+      label { display: inline-block; width: 160px; }
+    </style>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  </head>
+  <body>
+    <h2>WaveSync Web (Spotify Web Playback SDK)</h2>
+  <div class="row"><label for="httpBase">HTTP Base:</label><input id="httpBase" size="28" value="http://localhost:4000" placeholder="http://localhost:4000"/></div>
+  <div class="row"><label for="wsBase">WS Base:</label><input id="wsBase" size="28" value="ws://localhost:4000" placeholder="ws://localhost:4000"/></div>
+  <div class="row"><label for="sessionId">Session ID:</label><input id="sessionId" value="lobby" placeholder="lobby"/></div>
+  <div class="row"><label for="clientId">Client ID:</label><input id="clientId" value="web-" placeholder="web-xxxx"/></div>
+  <div class="row"><label for="token">Spotify OAuth Token:</label><input id="token" size="60" placeholder="Bearer token (or use PKCE sign-in)"/></div>
+  <div class="row"><label for="trackUri">Track URI:</label><input id="trackUri" size="40" placeholder="spotify:track:..."/></div>
+  <div class="row"><label for="seekMs">Seek (ms):</label><input id="seekMs" value="0" placeholder="0"/></div>
+    <div class="row">
+      <button id="btnPkceSignIn">PKCE Sign-In</button>
+      <button id="btnConnectWs">Connect WS</button>
+      <button id="btnSync">Clock Sync (10x)</button>
+    </div>
+    <div class="row">
+      <button id="btnInit">Init Spotify Player</button>
+      <button id="btnTransfer">Transfer Playback</button>
+      <button id="btnStart">Start in 3s (Host)</button>
+    </div>
+    <div class="row"><strong>Offset:</strong> <span id="offset">--</span> ms | <strong>RTT:</strong> <span id="rtt">--</span> ms</div>
+    <div id="log"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
