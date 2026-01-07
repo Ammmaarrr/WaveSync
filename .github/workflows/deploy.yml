@@ -41,7 +41,8 @@ jobs:
   build-and-push:
     needs: test
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Only run if Docker Hub secrets are configured
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.DOCKER_ENABLED == 'true'
     
     steps:
       - uses: actions/checkout@v3
@@ -76,7 +77,8 @@ jobs:
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Only run if Docker deployment is enabled
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.DOCKER_ENABLED == 'true'
     
     steps:
       - uses: actions/checkout@v3
