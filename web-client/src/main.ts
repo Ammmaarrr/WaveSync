@@ -16,6 +16,8 @@ function log(msg: string) { const line = `[${new Date().toISOString()}] ${msg}`;
 
 let channel: WebSocket | null = null;
 let driftTimer: number | null = null;
+let currentSessionId: string = '';
+let telemetryBatch: Array<{clientId: string; drift: number; timestamp: number}> = [];
 
 function connectWs() {
   const wsBase = $('wsBase').value.trim();
