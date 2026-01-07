@@ -9,20 +9,14 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
-    "dev": "node --loader tsx --watch ./src/server.ts"
+    "dev": "node --loader tsx --watch ./src/server.ts",
+    "lint": "echo 'No linter configured'"
   },
   "dependencies": {
-    "@types/react": "^19.2.6",
-    "@types/react-dom": "^19.2.3",
     "better-sqlite3": "^12.4.5",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "qrcode.react": "^4.2.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-qr-code": "^2.0.18",
-    "recharts": "^3.4.1",
     "ws": "^8.18.0"
   },
   "devDependencies": {

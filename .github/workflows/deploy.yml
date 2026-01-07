@@ -28,15 +28,12 @@ jobs:
       
       - name: Install server dependencies
         run: cd server && npm ci
+        
+      - name: Build server
+        run: cd server && npm run build
       
       - name: Install web-client dependencies
         run: cd web-client && npm ci
-      
-      - name: Lint server
-        run: cd server && npm run lint || true
-      
-      - name: Build server
-        run: cd server && npm run build
       
       - name: Build web-client
         run: cd web-client && npm run build
